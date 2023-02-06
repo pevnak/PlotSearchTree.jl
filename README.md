@@ -1,7 +1,7 @@
 **PlotSearchTree.jl**
-is a simple convenience package to visualize the search tree of Forward search algorithm produced by [SymbolicPlanners.jl](https://github.com/JuliaPlanners/SymbolicPlanners.jl) as follows.
+is a simple convenience package to visualize the search tree of Forward search algorithm produced by [SymbolicPlanners.jl](https://github.com/JuliaPlanners/SymbolicPlanners.jl) as follows:
 
-![img](goat.pdf)
+![img](goat.png)
 
 The above figure was create as follows:
 ```julia
@@ -17,7 +17,7 @@ state = initstate(domain, problem)
 spec = Specification(problem)
 
 h = EvalTracker(HAdd())
-planner = AStarPlanner(h; max_time=3600, save_search = true)
+planner = AStarPlanner(h;save_search = true)
 sol = planner(domain, state, spec)
 
 plot_search_tree("goat.tex", sol, h)
