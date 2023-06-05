@@ -19,3 +19,7 @@ sol = planner(domain, state, spec)
 plot_search_tree("blocksworld.tex", sol, h)
 
 
+
+
+using GLMakie
+plot_search_tree(sol)

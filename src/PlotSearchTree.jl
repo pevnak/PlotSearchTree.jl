@@ -167,6 +167,7 @@ function plot_search_tree(filename::String, sol::PathSearchSolution, he::EvalTra
 	open(io -> plot_search_tree(io, sol.search_tree, hash.(sol.trajectory), he.vals; kwargs...), filename, "w")
 end
 
+include("glmakie.jl")
 
 export EvalTracker, plot_search_tree
 end # module PlotSearchTree
