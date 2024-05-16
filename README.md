@@ -21,7 +21,13 @@ planner = AStarPlanner(h;save_search = true)
 sol = planner(domain, state, spec)
 
 plot_search_tree("goat.tex", sol, h)
+animate_search_tree("goat.gif", sol, h)
 ```
 You can see that it follows the standard SymbolicPlanners use with the exception of heuristic being wrapped to `EvalTracker` to log its values and order at which states were evaluated. The plot is than created by `plot_search_tree`. The output is a tikz figure, which needs to be compiled manually using for example pdflatex. See help for little available options.
 
+
+**Animation** We have added a new functionality, which animates the expansion of the searchtree. The function uses few external tools like, especially `pdflatex` and `convert`. Path to these tools can be changed by using named arguments `convert_path` and `pdflatex`.
+
 See [example/example.jl](example/example.jl) for a script with an example on blocksworld.
+
+![img](example/blocksworld.gif)

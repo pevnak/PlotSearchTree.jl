@@ -1,4 +1,4 @@
-using PDDL, PlanningDomains, SymbolicPlanners, PlotSearchTree
+using PDDL, PlanningDomains, SymbolicPlanners, PlotSearchTree, Printf
 
 # Load Blocksworld domain and problem
 domain = load_domain(:blocksworld)
@@ -16,9 +16,10 @@ planner = AStarPlanner(h;save_search = true)
 
 # Find a solution given the initial state and specification
 sol = planner(domain, state, spec)
+
 plot_search_tree("blocksworld.tex", sol, h)
 
-
+animate_search_tree("blocksworld.gif", sol, h)
 
 
 using GLMakie
